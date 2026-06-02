@@ -1,0 +1,10 @@
+@import './styles/global.css';
+@import './styles/Auth.css';
+@import './styles/Dashboard.css';
+@import './styles/Sidebar.css';
+@import './styles/TaskForm.css';
+@import './styles/Analytics.css';
+@import './styles/Profile.css';
+@import './styles/Settings.css';
+@import './styles/Pomodoro.css';
+@import './styles/Calendar.css';

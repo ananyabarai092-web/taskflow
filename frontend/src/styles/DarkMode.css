@@ -1,0 +1,20 @@
+/* Dark mode overrides — base handled by CSS variables in global.css */
+
+.dark-mode .auth-card {
+  background: rgba(26,29,39,0.9);
+  border-color: rgba(255,255,255,0.08);
+}
+
+.dark-mode .filter-select option,
+.dark-mode .input-field option {
+  background: #1a1d27;
+  color: #f1f5f9;
+}
+
+.dark-mode .modal-content {
+  background: var(--surface);
+}
+
+.dark-mode .kanban-col {
+  background: #1a1d27;
+}
