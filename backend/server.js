@@ -30,10 +30,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: true,
   credentials: true
 }));
-
 // Routes
 app.use('/api/auth', require('./src/routes/authRoutes'));
 app.use('/api/tasks', require('./src/routes/taskRoutes'));
