@@ -1,6 +1,5 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const User = require('./src/models/User');
 const Task = require('./src/models/Task');
 
@@ -21,24 +20,22 @@ const seedData = async () => {
     await Task.deleteMany();
     console.log('Cleared existing data');
 
-    // Create admin user
-    const adminPassword = await bcrypt.hash('Admin@123', 10);
+    // Create admin user (password will be hashed by the pre('save') hook)
     const admin = await User.create({
       name: 'Admin User',
       email: 'admin@todoapp.com',
-      password: adminPassword,
+      password: 'Admin@123',
       role: 'admin',
       isVerified: true,
       isActive: true
     });
     console.log('Admin user created');
 
-    // Create regular users
-    const userPassword = await bcrypt.hash('User@123', 10);
+    // Create regular users (password will be hashed by the pre('save') hook)
     const user1 = await User.create({
       name: 'John Doe',
       email: 'john@example.com',
-      password: userPassword,
+      password: 'User@123',
       role: 'user',
       isVerified: true,
       isActive: true
@@ -47,7 +44,7 @@ const seedData = async () => {
     const user2 = await User.create({
       name: 'Jane Smith',
       email: 'jane@example.com',
-      password: userPassword,
+      password: 'User@123',
       role: 'user',
       isVerified: true,
       isActive: true

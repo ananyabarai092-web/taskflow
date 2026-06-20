@@ -52,7 +52,6 @@ const Sidebar = () => {
           {!collapsed && (
             <div className="sidebar-brand-text">
               <span className="brand-name">TaskFlow</span>
-              <span className="brand-sub">Pro</span>
             </div>
           )}
         </div>
@@ -69,7 +68,7 @@ const Sidebar = () => {
           </div>
           <div className="user-info">
             <div className="user-name truncate">{user?.name}</div>
-            <div className="user-role">{user?.role === 'admin' ? '⚡ Admin' : '✦ Pro User'}</div>
+            <div className="user-role">{user?.role === 'admin' ? '⚡ Admin' : ''}</div>
           </div>
         </div>
       )}
